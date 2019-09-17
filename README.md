@@ -2,3 +2,4 @@
 email scraper chrome extension
 
 Gabriel Diaz
+Mason Zhong
