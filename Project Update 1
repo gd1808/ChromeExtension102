@@ -1,0 +1,11 @@
+Email Sorter Chrome Extension
+Members: Mason Zhong, Gabriel Diaz, Michael Padovani, Andrew Lee
+
+Project Update 1
+•	We have successfully set up a GitHub repository for our code. Link: https://github.com/gd1808/chrome-extension-scraper-102
+•	On the GitHub is our completed Domain Model which we completed using Lucidcharts
+•	We also completed the UML diagram for our program
+•	After discussions in class we realized that we would not be able to complete a State or Sequence diagram until we started to write code, we overestimated what we would be able to achieve. We will be turning in these diagrams in a latter project update.
+•	During class time the week of 9/24 we discussed in further detail how we would like our program to function. It will accept a keyword, from which it will scrape all incoming emails and store matches in a separate folder. So, for example if your keyword(s) was free food, the extension would scrape all future emails and store the ones containing the words “free food” in a separate folder in your Gmail account. The user would then have a nice and simple place to look for the information he/she desires.
+•	Going forward we plan to start programing
+•	Our next challenge will be understanding what info we need to parse through in the HTML of a Gmail, in order to find what we are looking for
