@@ -15,4 +15,8 @@ public class ScraperDB {
         emails.add(email);
     }
 
+    public String getEmail() {
+        return emails.get(0);
+    }
+
 }
