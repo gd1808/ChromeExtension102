@@ -1,4 +1,4 @@
-# chrome-extention-scraper-102
+# ChromeExtention102
 email scraper chrome extension
 
 Gabriel Diaz
