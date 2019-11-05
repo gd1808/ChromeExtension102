@@ -13,7 +13,9 @@ public class ScraperDB {
 
     public void store (String word, Object email) {
         if(key_word.equals(word)){
-            emails.add(email);
+            if(!emails.contains(email)) {
+                emails.add(email);
+            }
         }
     }
 
@@ -25,4 +27,13 @@ public class ScraperDB {
         emails.clear();
     }
 
+    public boolean equals(String o) {
+        if(o.hashCode() > key_word.hashCode()){
+            return false;
+        }
+        if(o.hashCode() == key_word.hashCode()){
+            return true;
+        }
+        return false;
+    }
 }
