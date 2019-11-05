@@ -5,18 +5,24 @@ import java.util.ArrayList;
 public class ScraperDB {
 
     private String key_word;
-    private ArrayList<String> emails;
+    private ArrayList<Object> emails;
 
     public ScraperDB (String key_word) {
         this.key_word = key_word;
     }
 
-    public void store (String email) {
-        emails.add(email);
+    public void store (String word, Object email) {
+        if(key_word.equals(word)){
+            emails.add(email);
+        }
     }
 
-    public String getEmail() {
-        return emails.get(0);
+    public ArrayList<Object> getEmails() {
+        return emails;
+    }
+
+    public void reset(){
+        emails.clear();
     }
 
 }
