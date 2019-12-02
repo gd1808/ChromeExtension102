@@ -14,6 +14,10 @@ import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.GmailScopes;
 import com.google.api.services.gmail.model.Label;
 import com.google.api.services.gmail.model.ListLabelsResponse;
+import com.google.api.services.gmail.model.Filter;
+import com.google.api.services.gmail.model.FilterAction;
+import com.google.api.services.gmail.model.FilterCriteria;
+import com.google.api.services.gmail.model.ListFiltersResponse;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,6 +26,11 @@ import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.List;
+
+/**
+ * ideas: can make a GUI to have them paste their credentials and I can parse the string
+ * **/
+
 
 /**
  * ScraperAPI: preliminary design of the scraper not yet tailored to our project's needs
