@@ -1,0 +1,28 @@
+{
+	"manifest_version" : 2,
+
+	"name": "Simple Chrome Plugin",
+	"description": "This is a simple example how to make a Chrome extention",
+	"version": "1.0",
+	"author": "Michael Padovani",
+
+	"browser_action": {
+ 	 "default_icon": "icon.png",
+ 	 "default_popup": "popup.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"popup.js"
+			]
+		}
+	],
+
+	"permissions": [
+ 	 "activeTab"
+	]
+}
