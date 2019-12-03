@@ -9,6 +9,8 @@ const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
 // time.
 const TOKEN_PATH = 'token.json';
 
+let mailLabel = document.getElementById("mail");
+
 // Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
@@ -81,7 +83,7 @@ function listLabels(auth) {
         if (labels.length) {
             console.log('Labels:');
             labels.forEach((label) => {
-                console.log(`- ${label.name}`);
+                mailLabel.innerHTML = `- ${label.name}`;
             });
         } else {
             console.log('No labels found.');

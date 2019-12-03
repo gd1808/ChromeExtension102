@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-	var minutesLabel = document.getElementById("minutes");
-	var secondsLabel = document.getElementById("seconds");
-	var totalSeconds = 0;
+	let minutesLabel = document.getElementById("minutes");
+	let secondsLabel = document.getElementById("seconds");
+	let totalSeconds = 0;
 	setInterval(setTime, 1000);
 
 	function setTime() {
