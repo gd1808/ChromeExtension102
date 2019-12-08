@@ -90,3 +90,8 @@ function listLabels(auth) {
         }
     });
 }
+
+module.exports = {
+  SCOPES,
+  listLabels,
+};
