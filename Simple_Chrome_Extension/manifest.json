@@ -2,7 +2,7 @@
 	"manifest_version" : 2,
 
 	"name": "Simple Chrome Plugin",
-	"description": "This is a simple example how to make a Chrome extention",
+	"description": "This is a simple example how to make a Chrome extension",
 	"version": "1.0",
 	"author": "Michael Padovani",
 

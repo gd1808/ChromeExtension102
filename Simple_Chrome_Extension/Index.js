@@ -1,6 +1,6 @@
-const fs = require('fs');
-const readline = require('readline');
-const {google} = require('googleapis');
+let fs = require('fs');
+let readline = require('readline');
+let {google} = require('googleapis');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
@@ -9,7 +9,9 @@ const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
 // time.
 const TOKEN_PATH = 'token.json';
 
-let mailLabel = document.getElementById("mail");
+//let mailLabel = document.getElementById("mail");
+let mailLabel = document.createElement("div");
+let htmlContent = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Results</title><body>';
 
 // Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
@@ -17,6 +19,7 @@ fs.readFile('credentials.json', (err, content) => {
     // Authorize a client with credentials, then call the Gmail API.
     authorize(JSON.parse(content), listLabels);
 });
+
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -35,6 +38,8 @@ function authorize(credentials, callback) {
         oAuth2Client.setCredentials(JSON.parse(token));
         callback(oAuth2Client);
     });
+
+    fs.writeFile("listMail.html", htmlContent, (error) => { console.log("Mission failed, we'll get em next time.") });
 }
 
 /**
@@ -74,6 +79,14 @@ function getNewToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 function listLabels(auth) {
+    let mail = document.createElement("div");
+    mail.className="mail";
+    let Label = document.createElement("div");
+    Label.className="Label";
+
+    //htmlContent.concat('<h1></h1>');
+    //var div = document.getElementById("whatever");
+
     const gmail = google.gmail({version: 'v1', auth});
     gmail.users.labels.list({
         userId: 'me',
@@ -81,17 +94,56 @@ function listLabels(auth) {
         if (err) return console.log('The API returned an error: ' + err);
         const labels = res.data.labels;
         if (labels.length) {
-            console.log('Labels:');
+            htmlContent.concat('<h1>Labels:</h1>');
+            //console.log('Labels:');
             labels.forEach((label) => {
-                mailLabel.innerHTML = `- ${label.name}`;
+                htmlContent.concat("<div class='labels'>" + `- ${label.name}` + "</div>");
+                //console.log(`- ${label.name}`);
             });
         } else {
             console.log('No labels found.');
         }
+        htmlContent.concat('</body></html>')
     });
 }
 
-module.exports = {
-  SCOPES,
-  listLabels,
-};
+/*function myFunction() {
+    fs.readFile('credentials.json', (err, content) => {
+        if (err) return console.log('Error loading client secret file:', err);
+        // Authorize a client with credentials, then call the Gmail API.
+        authorize(JSON.parse(content), listLabels);
+    });
+}*/
+
+/*
+ Displays a new message.
+ @param {String} user
+ @param {String} content
+
+function displaymessage(user,content){
+    var message=document.createElement("div");
+    message.className="message";
+
+    var uname=document.createElement("div");
+    uname.className="username";
+    uname.textContent=user;
+    message.appendChild(uname);
+
+    var cont=document.createElement("div");
+    cont.className="message-content";
+    cont.textContent=content;
+    message.appendChild(cont);
+
+    var chatMessages = id("chat-messages");
+
+    if(chatMessages.scrollTop >= chatMessages.scrollHeight-500){
+        var scrolled=true;
+    }
+
+    chatMessages.appendChild(message);
+
+    if(scrolled){
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+}
+ */

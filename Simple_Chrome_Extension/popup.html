@@ -3,6 +3,7 @@
 	<head>
 		<title>Simple Chrome Extension</title>
 		<script src="popup.js"></script>
+		<script type="text/javascript" src="Index.js"></script>
 	</head>
 	<style type="text/css">
 		body {
@@ -17,6 +18,7 @@
 	<body>
 		<h1>Simple Chrome extension</h1>
 		Time spent in extension: <label id="minutes">00</label>:<label id="seconds">00</label>
-		<button value="email" type="button" on-click="listLabels">Emails: </button><label id="mail">None</label>
+		<!--<button value="email" type="button" onclick="myFunction()">Emails: </button><p id="mail">None</p>-->
+		<button id="email"><a href="listMail.html" target="_blank">Results</a></button>
 	</body>
 </html>
