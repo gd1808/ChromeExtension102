@@ -7,7 +7,7 @@
 	"author": "Michael Padovani",
 
 	"browser_action": {
- 	 "default_icon": "icon.png",
+ 	 "default_icon": "GGmail.png",
  	 "default_popup": "popup.html"
 	},
 
