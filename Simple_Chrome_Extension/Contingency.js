@@ -1,17 +1,24 @@
 
 let keyword = "";
-let timing = new Date();
+let timing;
+let result = ""
 function setTime(){
     timing = new Date();
-    console.log(timing)
 }
 
 function setKeyword(word){
     keyword = word;
+    setTime();
+}
+function timeCorrection(){
+    var month = timing.getMonth() + 1;
+    var year = timing.getFullYear();
+
+    return year + "/" + month;
 }
 
-function main(){
-    setKeyword("food"); setTime();
-    console.log(keyword + timing);
+function main() {
+    setKeyword("food");
+    console.log(keyword + " after:" + timeCorrection());
 
 }
