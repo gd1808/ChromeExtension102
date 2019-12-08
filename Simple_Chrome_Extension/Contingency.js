@@ -1,7 +1,6 @@
 
 let keyword = "";
 let timing;
-let result = ""
 function setTime(){
     timing = new Date();
 }
@@ -17,8 +16,18 @@ function timeCorrection(){
     return year + "/" + month;
 }
 
+function writeQuery(query) {
+    let div = document.getElementById("gs_lc50");
+    let inputs = div.getElementsByClassName("gb_bf");
+    let textBox = inputs.item(0);
+
+    textBox.innerHTML = query;
+}
+
+
 function main() {
     setKeyword("food");
-    console.log(keyword + " after:" + timeCorrection());
-
+    let query = keyword + " after:" + timeCorrection();
+    console.log(query);
+    writeQuery(query);
 }
