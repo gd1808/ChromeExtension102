@@ -32,5 +32,5 @@ function main() {
     setKeyword(key);
     let query = keyword + " after:" + timeCorrection();
     console.log(query);
-//    writeQuery(query);
+    writeQuery(query);
 }
