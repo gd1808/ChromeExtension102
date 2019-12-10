@@ -26,8 +26,11 @@ function writeQuery(query) {
 
 
 function main() {
-    setKeyword("food");
+    let key = document.getElementById("filter").value;
+    //"food"
+    console.log(key);
+    setKeyword(key);
     let query = keyword + " after:" + timeCorrection();
     console.log(query);
-    writeQuery(query);
+//    writeQuery(query);
 }
