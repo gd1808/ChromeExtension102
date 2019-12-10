@@ -21,7 +21,7 @@ function writeQuery(query) {
     let inputs = div.getElementsByClassName("gb_bf");
     let textBox = inputs.item(0);
 
-    textBox.innerHTML = query;
+    textBox.value = query;
 }
 
 
